@@ -1,9 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, BaseEntity, OneToOne, JoinColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    CreateDateColumn,
+    BaseEntity,
+    OneToOne,
+    JoinColumn,
+    ManyToMany, JoinTable
+} from 'typeorm';
 import { BookGenre } from "./bookGenre.entity";
 import { BookAuthor } from "./bookAuthor.entity";
 
 @Entity()
-export class BookName  extends BaseEntity {
+export class BookName extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -13,16 +22,16 @@ export class BookName  extends BaseEntity {
     @Column({type: 'text', nullable: true, default: null})
     description: string;
 
-    @OneToOne(type => BookGenre)
-    @JoinColumn()
-    bookGenre: BookGenre;
+    @ManyToMany(type => BookGenre)
+    @JoinTable()
+    bookGenre: Promise<BookGenre[]>;
 
     @Column()
     bookGenreId: number;
 
-    @OneToOne(type => BookAuthor)
-    @JoinColumn()
-    bookAuthor: BookAuthor;
+    @ManyToMany(type => BookAuthor)
+    @JoinTable()
+    bookAuthors: Promise<BookAuthor[]>;
 
     @Column()
     bookAuthorId: number;

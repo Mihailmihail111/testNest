@@ -1,21 +1,21 @@
-export const BookGenreSeed = [
+export const BookAuthorSeed = [
     {
-        name: "Fantasy",
+        name: "ERNEST HEMINGWAY",
         createdAt: `${new Date()}`,
         updatedAt: `${new Date()}`
     },
     {
-        name: "Adventure",
+        name: "JOAN DIDION",
         createdAt: `${new Date()}`,
         updatedAt: `${new Date()}`
     },
     {
-        name: "Romance",
+        name: "RAY BRADBURY",
         createdAt: `${new Date()}`,
         updatedAt: `${new Date()}`
     },
     {
-        name: "Contemporary",
+        name: "GEORGE R.R. MARTIN",
         createdAt: `${new Date()}`,
         updatedAt: `${new Date()}`
     }

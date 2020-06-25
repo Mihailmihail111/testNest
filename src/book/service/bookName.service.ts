@@ -12,8 +12,8 @@ export class BookNameService {
         private bookNameRepository: Repository<BookName>,
     ) {}
 
-    findAll(): Promise<BookName[]> {
-        return this.bookNameRepository.find(/**{ relations: ["BookGenre", "BookAuthor"] }**/);
+    async findAll(): Promise<BookName[]> {
+        return await this.bookNameRepository.find();
     }
 
     findOne(id: number): Promise<BookName> {
